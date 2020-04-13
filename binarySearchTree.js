@@ -17,26 +17,26 @@ let Tree = function ( ) {
     let Node = function ( newData ) {
 
         this.data = newData;
+        //left right are pointer to the next node when applicable
         this.data.left = null;
         this.data.right = null;
+
     }
 
     this.insert = function( value ) {
 
         if ( this.data == null ) {
 
-            /* this breaks the code but is required for it to work. */
+            //if there is no root node then add it
             this.data = new Node( value );
-            //this runs the code but limits it to one node
-            //this.data =  value;
 
         } else {
 
             //this function was reqired becouse i could not call this.data.left/right.insert(value) beacuse insert() was undefined for this.data.left/right. 
             let searchTree = ( node ) => {
+
                 //if the value is less than the data go left else go right.
                 //go left of data
-              
                 if ( value <= node.data ) {
     
                     //if left node is null then add the new value as a Node
@@ -45,6 +45,7 @@ let Tree = function ( ) {
                         node.left = new Node( value );
                         
                     } else /* else rerun the insert funtion on the left node. running the function further down in the tree. */ {
+
                         searchTree( node.left );
                         //node.left.insert( value );
     
@@ -59,6 +60,7 @@ let Tree = function ( ) {
     
     
                     } else /* else rerun the insert funtion on the right node. running the function further down in the tree. */ {
+
                         searchTree( node.right );
                         //node.right.insert( value );
     
@@ -69,6 +71,7 @@ let Tree = function ( ) {
                 this.data = node;
             }
 
+            //start on root node
             searchTree(this.data);
 
         }
@@ -87,6 +90,7 @@ let Tree = function ( ) {
                 printList( node.left );
     
             }
+
             //print middle 
             console.log( node.data );
 
@@ -97,8 +101,9 @@ let Tree = function ( ) {
     
             }
 
-        }
+        }//printlist function
 
+        //start printing values
         printList( this.data );
        
     }//printInOrder
