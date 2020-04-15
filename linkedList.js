@@ -28,6 +28,7 @@ function linkedList() {
     };
 
     //add a new node to the list
+    // O( n )
     this.add = function( element ) { 
 
         var node = new Node( element );
@@ -56,6 +57,7 @@ function linkedList() {
 
     };//end of this.add
 
+    // O( n )
     this.printNodes = function( ) {
 
         currentNode = head;

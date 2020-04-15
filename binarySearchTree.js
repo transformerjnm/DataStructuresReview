@@ -9,6 +9,9 @@ one that might work
 https://www.youtube.com/watch?v=6JeuJRqKJrI
 
 binary serach tree
+has no auto ordering. so if u enter 10 first then ten is the root. if you then enter 20 and 30. 20 will not become the root the root will stay 10
+and the tree will become unbalanced
+
 */
 
 let Tree = function ( ) {

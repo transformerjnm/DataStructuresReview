@@ -29,6 +29,7 @@ let Trie = function() {
     //root Node is empty so that we can have any word span off of it
     this.root = new Node();
 
+    //O( input )
     this.add = (input, node = this.root) => {
 
         if ( input.length == 0 )/*nothing left to input */ {
